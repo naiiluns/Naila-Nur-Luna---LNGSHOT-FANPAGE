@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | LNGSHOT Fanpage</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AF%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <p class="logo">LNGSHOT</p>
+    <p class="tagline">롱샷 · Discover the World of LNGSHOT</p>
+
+    <div class="marquee">
+        <span>
+            IT'S LNGSHOT 4SHO! ★ HELLO, WE ARE LNGSHOT!
+            ★ WELCOME TO SHOTTIES!
+        </span>
+    </div>
+</header>
+
+<!-- NAVIGASI -->
+<nav class="nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <li class="has-sub">
+            <a href="about.html">About &#9662;</a>
+            <ul class="dropdown">
+                <li><a href="about.html">Group Profile</a></li>
+                <li><a href="members.html">Member Profile</a></li>
+                <li><a href="funfacts.html">Fun Facts</a></li>
+            </ul>
+        </li>
+
+        <li><a href="music.html">Music</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="registration.html" class="aktif">Registration</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- WRAPPER -->
+<div class="wrap">
+
+<!-- MAIN CONTENT -->
+<main>
+
+    <section class="box">
+        <h1>JOIN THE SHOTTIES!</h1>
+
+        <p>
+            Yuk, kenalan lebih dekat dan jadi bagian dari SHOTTIES!
+            Isi formulir di bawah ini untuk bergabung dengan komunitas
+            penggemar LNGSHOT.
+        </p>
+
+        <form id="formShotties">
+
+            <!-- NAMA -->
+            <div class="field">
+                <label for="nama">Nama Lengkap</label>
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama kamu"
+                    required>
+            </div>
+
+            <!-- LINE -->
+            <div class="field">
+                <label for="line">Username LINE</label>
+                <input
+                    type="text"
+                    id="line"
+                    placeholder="Masukkan username LINE kamu"
+                    required>
+            </div>
+
+            <!-- KOTA -->
+            <div class="field">
+                <label for="kota">Asal Kota</label>
+                <input
+                    type="text"
+                    id="kota"
+                    placeholder="Contoh: Jakarta"
+                    required>
+            </div>
+
+            <!-- BIAS -->
+            <fieldset class="field">
+                <legend>Siapa Bias Kamu di LNGSHOT?</legend>
+
+                <div class="pilihan">
+                    <label>
+                        <input type="radio" name="bias" value="Ohyul" required>
+                        Ohyul
+                    </label>
+
+                    <label>
+                        <input type="radio" name="bias" value="Ryul">
+                        Ryul
+                    </label>
+
+                    <label>
+                        <input type="radio" name="bias" value="Woojin">
+                        Woojin
+                    </label>
+
+                    <label>
+                        <input type="radio" name="bias" value="Louis">
+                        Louis
+                    </label>
+
+                    <label>
+                        <input type="radio" name="bias" value="All Members">
+                        All Members
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- SUMBER INFORMASI -->
+            <div class="field">
+                <label for="sumber">
+                    Pertama Kali Kenal LNGSHOT dari Mana?
+                </label>
+
+                <select id="sumber" required>
+                    <option value="">-- Pilih jawaban --</option>
+                    <option value="TikTok">TikTok</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="YouTube">YouTube</option>
+                    <option value="X (Twitter)">X (Twitter)</option>
+                    <option value="Teman">Teman</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+            </div>
+
+            <!-- ALASAN SUKA -->
+            <div class="field">
+                <label for="alasan">
+                    Kenapa Kamu Bisa Suka LNGSHOT?
+                </label>
+
+                <textarea
+                    id="alasan"
+                    rows="4"
+                    placeholder="Ceritakan alasan kamu menyukai LNGSHOT..."
+                    required></textarea>
+            </div>
+
+            <!-- BUTTON -->
+            <button type="submit">
+                JOIN SHOTTIES!
+            </button>
+
+        </form>
+
+        <!-- HASIL PENDAFTARAN -->
+        <div id="hasilPendaftaran" class="box" hidden>
+            <h2>WELCOME TO SHOTTIES!</h2>
+
+            <p>Yeay! Berikut data pendaftaran kamu:</p>
+
+            <p><strong>Nama:</strong> <span id="hasilNama"></span></p>
+            <p><strong>LINE:</strong> <span id="hasilLine"></span></p>
+            <p><strong>Kota:</strong> <span id="hasilKota"></span></p>
+            <p><strong>Bias:</strong> <span id="hasilBias"></span></p>
+            <p><strong>Kenal dari:</strong> <span id="hasilSumber"></span></p>
+            <p><strong>Alasan suka:</strong> <span id="hasilAlasan"></span></p>
+
+            <p class="kartu-footer">
+                LNGSHOT 4SHO! ♡
+            </p>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- SIDEBAR -->
+<aside class="side">
+
+    <section class="box">
+        <h3>Jam</h3>
+        <div id="jam">--:--:--</div>
+        <p id="tanggal"></p>
+    </section>
+
+    <section class="box">
+        <h3>Fakta Singkat</h3>
+        <ul>
+            <li>Label: MORE VISION</li>
+            <li>Debut: 13 Januari 2026</li>
+            <li>Fandom: SHOTTIES</li>
+            <li>Salam: It's LNGSHOT 4SHO!</li>
+        </ul>
+    </section>
+
+    <section class="box">
+        <h3>Ikuti Mereka</h3>
+        <ul>
+            <li><a href="https://www.youtube.com/@LNGSHOT4SHO">YouTube</a></li>
+            <li><a href="https://www.instagram.com/lngshot4sho">Instagram</a></li>
+            <li><a href="https://x.com/LNGSHOT4sho">X (Twitter)</a></li>
+            <li><a href="https://www.tiktok.com/@lngshot4sho">TikTok</a></li>
+        </ul>
+    </section>
+
+    <section class="box">
+        <h3>Our Community</h3>
+        <p>One fandom, one love, one LNGSHOT!</p>
+    </section>
+
+    <section class="box">
+        <h3>Pengunjung</h3>
+        <p>Kunjunganmu ke-<strong id="counter">1</strong></p>
+    </section>
+
+</aside>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>&copy; 2026 LNGSHOT Fanpage. All Rights Reserved.</p>
+    <p>A fan-made website dedicated to LNGSHOT. Not an official website.</p>
+    <p>Desain oleh Naila Nur Luna</p>
+    <p>
+        Official Website:
+        <a href="https://lngshot4sho.com/">lngshot4sho.com</a>
+    </p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+
+
+</body>
+</html>
