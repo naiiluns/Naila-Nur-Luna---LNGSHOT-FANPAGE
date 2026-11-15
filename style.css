@@ -1,4 +1,4 @@
-/* ===== 1. Variabel (ganti warna/font di sini) ===== */
+/* ===== 1. Variabel ===== */
 :root{--ink:#1b1464;--biru:#2f3bff;--pink:#ff4f9a;--kuning:#ffe45c;--bg:#f1efff;--putih:#fff;
 --judul:"Bricolage Grotesque","Arial Black",sans-serif;--isi:"DM Sans",Arial,sans-serif}
 *{box-sizing:border-box}
