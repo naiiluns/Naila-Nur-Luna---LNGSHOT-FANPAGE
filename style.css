@@ -1,5 +1,5 @@
 /* ===== 1. Variabel (ganti warna/font di sini) ===== */
-:root{--ink:#1b1464;--biru:#2f3bff;--pink:#ff4f9a;--kuning:#ffe45c;--bg:#f1efff;--putih:#fff;--error:#c4194d;
+:root{--ink:#1b1464;--biru:#2f3bff;--pink:#ff4f9a;--kuning:#ffe45c;--bg:#f1efff;--putih:#fff;
 --judul:"Bricolage Grotesque","Arial Black",sans-serif;--isi:"DM Sans",Arial,sans-serif}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--isi);line-height:1.6}
@@ -39,112 +39,45 @@ th{background:var(--kuning)}
 .bagan{text-align:center}.bagan .node{display:inline-block;background:var(--kuning);border:2px solid var(--ink);border-radius:10px;padding:8px 16px;font-weight:700;margin:4px}
 .bagan .garis{height:20px;border-left:3px solid var(--ink);width:0;margin:0 auto}
 
+/* Mencegah konten melebar */
+main{min-width:0}
+
 /* ===== 5. Sidebar ===== */
 .side .box{padding:16px}
 #jam{font:800 2rem var(--judul);text-align:center}
 #tanggal{text-align:center;margin:0;font-size:.9rem}
 .side ul{padding-left:18px;margin:0}
 
-/* ===== 6. Galeri ===== */
-.foto{aspect-ratio:4/3;border:2px solid var(--ink);border-radius:10px;display:grid;place-items:center;color:var(--putih);font-weight:800;background:linear-gradient(135deg,var(--biru),var(--pink))}
-.foto:nth-child(even){background:linear-gradient(135deg,var(--ink),var(--biru))}
-
-
-/* ===== 6b. Galeri Album ===== */
-
-.galeri {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    width: 100%;
-    min-width: 0;
-}
+/* ===== 6. Galeri album + foto member ===== */
+.galeri{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;width:100%;min-width:0}
 
 /* Kotak setiap album */
-.galeri figure {
-    width: 100%;
-    min-width: 0;
-    margin: 0;
-    padding: 10px;
-    background: var(--putih);
-    border: 2px solid var(--ink);
-    border-radius: 12px;
-    box-shadow: 4px 4px 0 var(--ink);
-    transition: transform .3s;
-}
+.galeri figure{width:100%;min-width:0;margin:0;padding:10px;background:var(--putih);border:2px solid var(--ink);border-radius:12px;box-shadow:4px 4px 0 var(--ink);transition:transform .3s}
+.galeri figure:hover{transform:translateY(-5px)}
 
-/* Efek saat kursor diarahkan ke album */
-.galeri figure:hover {
-    transform: translateY(-5px);
-}
+/* Foto album */
+.galeri img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;object-position:center;max-width:100%;border:2px solid var(--ink);border-radius:8px}
 
-/* Ukuran foto album */
-.galeri img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    object-position: center;
-    max-width: 100%;
-    border: 2px solid var(--ink);
-    border-radius: 8px;
-}
+/* Nama album */
+.galeri figcaption{text-align:center;font-size:.9rem;margin-top:10px;line-height:1.5;color:var(--ink)}
 
-/* Tulisan nama album */
-.galeri figcaption {
-    text-align: center;
-    font-size: .9rem;
-    margin-top: 10px;
-    line-height: 1.5;
-    color: var(--ink);
-}
-
-/* Mencegah konten melebar */
-main {
-    min-width: 0;
-}
-
-/* Tampilan di HP */
-@media(max-width:600px) {
-    .galeri {
-        grid-template-columns: 1fr;
-    }
-}
 /* Foto profil member */
-.foto-member {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    height: 350px;
-    object-fit: cover;
-    object-position: center;
-    border: 2px solid var(--ink);
-    border-radius: 10px;
-}
+.foto-member{display:block;width:100%;max-width:500px;height:350px;object-fit:cover;object-position:center;border:2px solid var(--ink);border-radius:10px}
 
+/* Galeri jadi 1 kolom di HP */
+@media(max-width:600px){.galeri{grid-template-columns:1fr}}
 
 /* ===== 7. Form (registration & contact) ===== */
 .field{margin:0 0 18px;padding:0;border:0}
 label,legend{font-weight:700;display:block;margin-bottom:6px}
 input[type=text],input[type=email],select,textarea{width:100%;padding:11px 12px;font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--ink);border-radius:8px}
 :focus-visible{outline:3px solid var(--biru);outline-offset:2px}
-.input-ig{display:flex}.input-ig span{display:grid;place-items:center;padding:0 14px;background:var(--kuning);border:2px solid var(--ink);border-right:0;border-radius:8px 0 0 8px;font-weight:700}
-.input-ig input{border-radius:0 8px 8px 0}
 .pilihan{display:flex;flex-wrap:wrap;gap:8px 18px}
-.pilihan label,.setuju{font-weight:500;display:flex;gap:8px;align-items:center;margin:0}
-input[type=radio],input[type=checkbox]{accent-color:var(--biru);width:18px;height:18px}
-.error{display:block;min-height:1.2em;color:var(--error);font-size:.85rem;margin-top:4px}
-.invalid{border-color:var(--error)!important}
+.pilihan label{font-weight:500;display:flex;gap:8px;align-items:center;margin:0}
+input[type=radio]{accent-color:var(--biru);width:18px;height:18px}
 button{margin-top:12px;width:100%;padding:13px;font:800 1.05rem var(--judul);color:var(--putih);background:var(--biru);border:2px solid var(--ink);border-radius:10px;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}
 button:hover{background:var(--pink)}
 .sukses{margin-top:16px;padding:14px;background:var(--kuning);border:2px solid var(--ink);border-radius:10px;font-weight:700}
-.kartu{background:var(--ink);color:var(--putih);border-radius:16px;padding:24px;box-shadow:6px 6px 0 var(--pink);transform:rotate(-2deg);transition:transform .3s;max-width:380px;margin:0 auto 24px}
-.kartu.aktif{transform:none}
-.kartu-label{margin:0;font-size:.8rem;letter-spacing:.08em;color:var(--kuning)}
-.kartu-nama{margin:16px 0 0;font:800 1.6rem/1.1 var(--judul);overflow-wrap:anywhere}
-.kartu-ig{margin:4px 0 14px;color:var(--pink);font-weight:700}
-dl{display:flex;gap:28px;margin:0}dt{font-size:.75rem;opacity:.7}dd{margin:0;font-weight:700}
 .kartu-footer{margin:14px 0 0;font:800 1rem var(--judul)}
 
 /* ===== 8. Footer ===== */
@@ -153,5 +86,4 @@ dl{display:flex;gap:28px;margin:0}dt{font-size:.75rem;opacity:.7}dd{margin:0;fon
 
 /* ===== 9. Responsive ===== */
 @media(max-width:860px){.wrap{grid-template-columns:1fr}.nav .dropdown{position:static}}
-@media(prefers-reduced-motion:reduce){.marquee span{animation:none;padding-left:0}.kartu{transition:none}}
-
+@media(prefers-reduced-motion:reduce){.marquee span{animation:none;padding-left:0}}
